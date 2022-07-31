@@ -7,6 +7,27 @@
   pointer-events: none;
 }
 
+.circle {
+  border-radius: 100vw;
+  background-color: rgba(70, 70, 70, 0.5);
+  aspect-ratio: 1;
+  height: 40px;
+  width: 40px;
+}
+
+.banner{
+  background-image: url('./assets/banner.jpg');
+  background-size: cover;
+  padding: 0px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.round-corners {
+  border-radius: 10px;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -1,0 +1,13 @@
+
+@import "variables.scss";
+/* change the colors */
+$primary: #FF1744;
+$danger: #dd0000;
+$success: lime;
+$warning: orange;
+$info: aqua;
+
+$body-bg: #f3f3f0;
+@import '~bootstrap/scss/bootstrap.scss';
+@import "_bootswatch.scss";
+
