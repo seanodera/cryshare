@@ -9,10 +9,10 @@ const Exchanger = () => {
   const [rate,setRate] =useState(13.6);
 
   return (
-    <Card className='round-corners'>
+    <Card className='round-corners '>
+      
+      <Card.Body className=' text-start'>
       <Card.Title>Exchange</Card.Title>
-      <Card.Body>
-
        <Form>
         <FormLabel>Amount</FormLabel>
         <FormControl placeholder='amount' type='number' value={amount} onChange={(e) => setAmount(e.currentTarget.value)}/>
@@ -34,7 +34,7 @@ const Exchanger = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel>Exchanged Amount</FormLabel>
-          <FormControl value={amount * rate} onChange={(e) => setAmount(e.currentTarget.value/rate)}/>
+          <FormControl value={amount * rate} type='number' onChange={(e) => setAmount(e.currentTarget.value/rate)}/>
         </FormGroup>
        
         

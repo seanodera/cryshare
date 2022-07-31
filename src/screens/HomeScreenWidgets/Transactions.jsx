@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { Button,Card, Container, Table } from 'react-bootstrap'
+import { Badge, Button,Card, Container, Table } from 'react-bootstrap'
 
 const Transactions = () => {
   const [transactions, setTransactions] = useState([{
@@ -20,24 +20,23 @@ const Transactions = () => {
       incoming: true,
       amount: i*1000,
       date: Date(),
-      status: 'Completed',
+      status: 'Processing',
       name: 'Bitcoin',
     };
-    
-    console.log(transaction);
     templist.push(transaction)
     setTransactions(templist);
   }
   }, [])
+
   
   return (
     <Card className='round-corners'>
           <Container className='py-3'>
-      <div className='d-flex justify-content-between'>
+      <div className='d-flex justify-content-between px-4'>
       <h4> Recent Transactions</h4>
       <Button size='sm' variant='outline-primary'>Show All</Button>
       </div>
-      <Table bordered hover>
+      <Table hover>
         <thead>
           <th>
             Name
@@ -64,7 +63,9 @@ const Transactions = () => {
             {_transaction.date}
           </td>
           <td>
-            {_transaction.status}
+           
+           <Badge className='py-2' bg={ (_transaction.status === 'Completed')? 'success' :
+            (_transaction.status === 'Processing')? 'info' : (_transaction.status === 'Pending')? 'warning' : 'danger'}> {_transaction.status}</Badge>
           </td>
           </tr>)}
         </tbody>
